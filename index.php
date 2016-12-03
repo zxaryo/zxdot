@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO zxdot (sender, value) VALUES ('" . $_POST['sender'] ."', ". $_POST['value'] .")";
+$sql = "INSERT INTO zxdot (sender, value) VALUES ('" . $_POST["sender"] ."', ". $_POST["value"] .")";
 
 echo $sql;
 
