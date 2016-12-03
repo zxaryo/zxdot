@@ -12,10 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO zxdot (sender, value) VALUES ('" + $_POST['sender'] +"', "+ $_POST['value'] +")";
-
-echo $sql;
-print $sql;
+$sql = "INSERT INTO zxdot (sender, value) VALUES ('" . $_POST['sender'] ."', ". $_POST['value'] .")";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
