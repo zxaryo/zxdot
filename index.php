@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 
 var_dump($_POST['sender']);
 
-$sql = "INSERT INTO zxdot (sender, value) VALUES ('" . $_REQUEST['sender'] . "', ". $_REQUEST['value'] .")";
+$sql = "INSERT INTO zxdot (sender, value) VALUES ('" . $_GET['sender'] . "', ". $_GET['value'] .")";
 
 echo $sql;
 
