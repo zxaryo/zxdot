@@ -12,16 +12,17 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO zxdot (sender, value) VALUES ('" . $_GET['sender'] . "', ". $_GET['value'] .")";
+$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$result = $conn->query($sql);
 
-//echo $sql;
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo $row["sender"]. "[ " . $row["timesamp"]. " ] : " . $row["value"]. "<br>";
+    }
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "0 results";
 }
-
 $conn->close();
 
 ?>
