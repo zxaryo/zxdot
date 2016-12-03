@@ -14,6 +14,8 @@ if ($conn->connect_error) {
 
 $sql = "INSERT INTO zxdot (sender, value) VALUES ('" + $_POST['sender'] +"', '"+ $_POST['value'] +"')";
 
+echo $sql;
+
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
