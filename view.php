@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT sender, timesamp, value FROM zxdot";
+$sql = "SELECT sender, timesamp, value FROM zxdot SORT BY timesamp";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
