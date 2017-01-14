@@ -12,10 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sender=$_GET['sender']
-$value=$_GET['value']
-
-$sql = "UPDATE zxdot SET 'value'=$value WHERE 'sender'=$sender";
+$sql = "UPDATE zxdot SET 'value'=(".$_GET['value'].") WHERE 'sender'=(".$_GET['sender'].")";
 
 //echo $sql;
 
